@@ -18,6 +18,7 @@ The code was simplified and adapted to provide a minimal standalone **Save as JP
 - Optional **caption sidecar files** (`.txt` or other extensions)
 - Compatible with **ComfyUI filename numbering**
 - Handles **RGBA → RGB conversion automatically**
+- **Concurrent generation safe** - automatically prevents file overwrites by incrementing filenames when conflicts occur
 
 ---
 

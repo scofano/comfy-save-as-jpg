@@ -94,8 +94,18 @@ class SaveImageJPG:
             if img.mode == "RGBA":
                 img = img.convert("RGB")
 
-            file = f"{filename}_{counter:05}.jpg"
-            file_path = os.path.join(full_output_folder, file)
+            # Ensure unique filename by checking if file already exists
+            file_counter = counter
+            while True:
+                file = f"{filename}_{file_counter:05}.jpg"
+                file_path = os.path.join(full_output_folder, file)
+                
+                # Check if file already exists
+                if not os.path.exists(file_path):
+                    break
+                
+                # If file exists, increment counter and try again
+                file_counter += 1
 
             img.save(
                 file_path,
@@ -108,7 +118,7 @@ class SaveImageJPG:
             if caption:
                 caption_path = os.path.join(
                     full_output_folder,
-                    f"{filename}_{counter:05}{caption_file_extension}"
+                    f"{filename}_{file_counter:05}{caption_file_extension}"
                 )
                 with open(caption_path, "w", encoding="utf-8") as f:
                     f.write(caption)
