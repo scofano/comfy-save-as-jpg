@@ -25,3 +25,10 @@ The code was simplified and adapted to provide a minimal standalone **Save as JP
 # Installation
 
 1. Navigate to your ComfyUI `custom_nodes` directory:
+
+---
+
+# License
+
+This project is licensed under the **GNU Affero General Public License v3.0**.
+See the [LICENSE](LICENSE) file for the full text.
